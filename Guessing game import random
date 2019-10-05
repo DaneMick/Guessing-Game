@@ -1,0 +1,32 @@
+import random
+
+myName = input("Hello! what is your name?\n")
+
+number = random.randint(1, 5)
+print("Well {} I am thinking of a number between 1 and 5.".format(myName))
+
+guess = ""
+guessesTaken = 0
+guessesTaken = int(guessesTaken)
+guess_limit = 3
+
+
+while guess != number:
+    if guessesTaken < guess_limit:
+
+        guess = input("Take a guess\n")
+        guess = int(guess)
+        guessesTaken += 1
+
+        if guess < number:
+            print("Your guess is too low.")
+
+        if guess > number:
+            print("You guessed too high.")
+
+        if guess == number:
+            print("good job, {0} you guessed my number in {1} guesses".format(myName, guessesTaken))
+        else:
+
+            if guess_limit == guessesTaken:
+                print("Sorry, you're out of guesses. You guessed incorrectly too many times.")
